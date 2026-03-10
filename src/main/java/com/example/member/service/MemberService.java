@@ -34,7 +34,7 @@ public class MemberService {
     @Transactional(readOnly = true)
     public GetMemberResponse findById(Long id) {
         Member member = memberRepository.findById(id).orElseThrow(
-                () -> new IllegalArgumentException("Member not found")
+                () -> new IllegalArgumentException("사용자를 찾을 수 없습니다.")
         );
 
         return new GetMemberResponse(
